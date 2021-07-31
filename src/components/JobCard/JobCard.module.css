@@ -1,0 +1,53 @@
+.wrapper {
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 15%);
+  background-color: white;
+  padding: 25px 0 0;
+  margin-bottom: 15px;
+}
+
+.job_board_info {
+  display: flex;
+  padding: 11px 25px;
+  align-items: center;
+  background-color: #e8eaf3;
+  overflow: auto;
+}
+
+.job_info h3 {
+  line-height: 1.11;
+  color: #4767a0;
+  padding: 0 25px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.job_meta_info {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding: 0 25px;
+}
+
+.job_meta_location {
+  display: flex;
+  width: 100%;
+}
+
+.job_add_candidate {
+  display: flex;
+  width: 50%;
+}
+
+.job_state {
+  padding-right: 30px;
+  flex-shrink: 0;
+}
+
+.number {
+  font-weight: 600;
+}

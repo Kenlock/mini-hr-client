@@ -1,0 +1,123 @@
+.wrapper {
+  opacity: 1;
+  transition: opacity 500ms linear 100ms;
+  height: 100vh;
+}
+
+.header {
+  background-size: cover;
+  background: url('https://springrecruit.com/static/media/headerBG.a04c51f0.png');
+  padding: 20px 5%;
+}
+
+.job_fresh {
+  width: 50px;
+  height: 25px;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+  background-color: rgb(153, 153, 153);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job_role {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.job_type {
+  font-size: 12px;
+  color: white;
+  margin-left: 10px;
+}
+
+.companyName {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: initial;
+  margin-bottom: 10px;
+}
+
+.job_details {
+  color: rgb(226, 229, 228);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.job_details span {
+  margin: 10px 30px 0 0;
+  display: inline-flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.apply_now {
+  margin: 28px auto;
+}
+
+.apply_now_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.apply_now_job_detail {
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 15%);
+  padding: 20px 28px 20px 20px;
+  color: #697998;
+  font-size: 14px;
+  background-color: white;
+}
+
+.apply_now_row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 14px;
+  line-height: 16px;
+}
+
+.apply_now_social {
+  display: flex;
+  flex-direction: column;
+  height: 91px;
+  background: white;
+  box-shadow: 0 2px 10px 0 rgb(10 31 68 / 10%), 0 0 1px 0 rgb(10 31 68 / 8%);
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #4767a0;
+  line-height: 20px;
+}
+
+.apply_now_card {
+  width: 875px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 15%);
+  padding: 30px 30px 40px;
+  margin-bottom: 40px;
+  background: #fff;
+}
+
+.apply_now_card_title {
+  height: 20px;
+  color: #53627c;
+  font-size: 24px;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.apply_now_card_detail {
+  display: inline-block;
+  color: #8a94a6;
+  font-size: 17px;
+  line-height: 23px;
+  word-break: break-word;
+}

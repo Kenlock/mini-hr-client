@@ -1,0 +1,23 @@
+.wrapper {
+  width: 31%;
+  height: 360px;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 3px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.heading {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(102, 102, 102);
+}
+
+li {
+  color: #8a94a6;
+  font-size: 14px;
+}

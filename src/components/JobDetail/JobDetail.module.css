@@ -1,0 +1,18 @@
+.fields_wrapper {
+  width: 100%;
+  min-width: 600px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 3px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 48%);
+  padding: 35px;
+  border-radius: unset;
+  gap: 30px 20px;
+  margin: 0px;
+}
+
+.btn_wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}

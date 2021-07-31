@@ -1,0 +1,22 @@
+.heading_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.heading {
+  color: #333;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.btn_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+}

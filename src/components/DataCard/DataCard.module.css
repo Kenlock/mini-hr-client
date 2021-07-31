@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: auto;
+  background-color: white;
+  width: 24%;
+  border-radius: 4px;
+  height: 150px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 3px 0px;
+}
+.wrapper:hover {
+  cursor: pointer;
+  border-bottom: 4px solid #2490ff;
+  transition: border 0.1s ease-in 0s;
+}
+
+.count {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 20px;
+  color: rgb(51, 51, 51);
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+}
