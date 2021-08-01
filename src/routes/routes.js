@@ -13,7 +13,7 @@ import ApplyForm from '../screens/Apply/Apply.js';
 
 export const AppRoute = () => {
   return (
-    <Layout>
+    <Layout style={{ height: '100vh', width: '100vw' }}>
       <div>
         <BrowserRouter>
           <Switch>

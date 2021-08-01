@@ -8,10 +8,13 @@ const initialState = {
   resend: 0,
   isVerified: false,
   verifiedAt: null,
+  isNew: null,
+  authToken: null,
+  user: null,
 };
 
 const defaultErrorMessage = 'Something went wrong!';
-export default (state = initialState, action) => {
+const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.OTP_REQUEST:
       return {
@@ -51,17 +54,25 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        user: null,
+        isNew: null,
       };
     case types.OTP_VERIFY_SUCCESS:
       return {
         ...state,
         isLoading: false,
+        isNew: action.payload.data.isNew,
+        user: action.payload.data.user,
+        authToken: action.payload.data.user.authToken,
         isVerified: action.payload.data.isVerified,
         verifiedAt: action.payload.data.verifiedAt,
       };
     case types.OTP_VERIFY_ERROR:
       return {
         ...state,
+        isNew: false,
+        user: null,
+        authToken: null,
         isLoading: false,
         isVerified: false,
         error: action.payload.message || defaultErrorMessage,
@@ -71,3 +82,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default AuthReducer;
