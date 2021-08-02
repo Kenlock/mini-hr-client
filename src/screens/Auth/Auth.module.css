@@ -1,8 +1,11 @@
 .heading {
   margin-top: 76px;
   text-align: center;
-  font-weight: 700;
   font-size: 28px;
+}
+
+.heading h1 {
+  font-weight: 700;
 }
 
 .form_wrapper {
@@ -18,4 +21,15 @@
 
 .form_btn {
   text-align: center;
+}
+
+.image_wrapper {
+  width: 100%;
+  min-height: 150px;
+  max-height: auto;
+}
+
+.image_wrapper img {
+  max-width: 100%;
+  height: auto;
 }

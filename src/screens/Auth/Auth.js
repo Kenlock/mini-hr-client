@@ -10,6 +10,7 @@ import * as onBoardActions from '../../store/actions/onBoardActions';
 
 const Auth = (props) => {
   const [isOTPSend, setOTPSend] = useState(false);
+  const [email, setEmail] = useState(null);
   const history = useHistory();
   useEffect(() => {
     if (props.isVerified) {
@@ -36,11 +37,20 @@ const Auth = (props) => {
   }, [props.isLoading]);
 
   const onFinish = (values) => {
+    setEmail(values);
+    handleOTPRequest();
+  };
+
+  const handleOTPRequest = () => {
     if (props.isOTPSend) {
-      props.verifyOTPRequest(values);
+      props.verifyOTPRequest(email);
     } else {
-      props.sendOTPRequest(values);
+      props.sendOTPRequest(email);
     }
+  };
+
+  const handleResendOTP = () => {
+    props.sendOTPRequest(email);
   };
 
   const onFinishFailed = (errorInfo) => {};
@@ -51,8 +61,7 @@ const Auth = (props) => {
         <title>Welcome | MINI-HR</title>
       </Helmet>
       <div className={styles.heading}>
-        <h1>Welcome, MINI-HR</h1>
-        <hr />
+        <h1>Welcome 👋</h1>
       </div>
       <Row>
         <Col span={12}>
@@ -71,7 +80,7 @@ const Auth = (props) => {
                 rules={[
                   {
                     required: props.isOTPSend ? false : true,
-                    message: 'Please input your email!',
+                    message: 'Please enter valid email!',
                   },
                 ]}
               >
@@ -79,6 +88,8 @@ const Auth = (props) => {
                   autoFocus
                   defaultValue={props.email}
                   disabled={props.isOTPSend ? true : false}
+                  autoComplete={false}
+                  placeholder="doe@some_email.com"
                 />
               </Form.Item>
               {props.isOTPSend && (
@@ -92,7 +103,12 @@ const Auth = (props) => {
                     },
                   ]}
                 >
-                  <Input autoFocus />
+                  <Input
+                    autoFocus
+                    autoComplete={false}
+                    type="number"
+                    placeholder="OTP here"
+                  />
                 </Form.Item>
               )}
 
@@ -104,13 +120,22 @@ const Auth = (props) => {
                 className={styles.form_btn}
               >
                 {props.isOTPSend ? (
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    loading={props.isLoading}
-                  >
-                    Verify OTP
-                  </Button>
+                  <>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      loading={props.isLoading}
+                    >
+                      Verify OTP
+                    </Button>
+                    <Button
+                      type="link"
+                      loading={props.isLoading}
+                      onClick={handleResendOTP}
+                    >
+                      Resend OTP
+                    </Button>
+                  </>
                 ) : (
                   <Button
                     type="primary"
@@ -125,11 +150,13 @@ const Auth = (props) => {
           </div>
         </Col>
         <Col span={12}>
-          <img
-            style={{ width: '100%', height: '100%' }}
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGhyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-            alt="Login_Banner_Image"
-          />
+          <div className={styles.image_wrapper}>
+            <img
+              style={{ width: '100%', height: '100%' }}
+              src={process.env.PUBLIC_URL + '/homepage.svg'}
+              alt="Login_Banner_Image"
+            />
+          </div>
         </Col>
       </Row>
     </React.Fragment>

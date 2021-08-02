@@ -56,6 +56,8 @@ const AuthReducer = (state = initialState, action) => {
         isLoading: true,
         user: null,
         isNew: null,
+        error: null,
+        isVerified: false,
       };
     case types.OTP_VERIFY_SUCCESS:
       return {
@@ -63,7 +65,7 @@ const AuthReducer = (state = initialState, action) => {
         isLoading: false,
         isNew: action.payload.data.isNew,
         user: action.payload.data.user,
-        authToken: action.payload.data.user.authToken,
+        authToken: action.payload.data?.user?.authToken,
         isVerified: action.payload.data.isVerified,
         verifiedAt: action.payload.data.verifiedAt,
       };

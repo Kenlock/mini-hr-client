@@ -14,12 +14,6 @@ const persistConfig = {
   blacklist: [],
 };
 
-const authPersist = {
-  key: 'auth',
-  storage,
-  blacklist: ['isOTPSend', 'isLoading'],
-};
-
 const jobPersist = {
   key: 'job',
   storage,
@@ -27,7 +21,7 @@ const jobPersist = {
 };
 
 const rootReducer = combineReducers({
-  Auth: persistReducer(authPersist, authReducer),
+  Auth: authReducer,
   User: onBoardReducer,
   Dashboard: dashboardReducer,
   Job: persistReducer(jobPersist, jobReducer),

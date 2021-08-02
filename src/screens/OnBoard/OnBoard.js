@@ -39,7 +39,7 @@ const OnBoard = (props) => {
       <PageHeader
         className="site-page-header"
         onBack={() => history.push('/')}
-        title="Tell us little about yourself"
+        title="Glad that you want to be a part of change"
         subTitle="MINI-HR platform"
       />
       <div

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 import { Button } from 'antd';
 import {
   ScheduleOutlined,
@@ -14,10 +15,15 @@ import InfoCard from '../../components/InfoCard/InfoCard';
 import Chart from '../../components/Chart/Chart';
 
 const Dashboard = (props) => {
+  const history = useHistory();
   useEffect(() => {
     // make API call
     props.getDashboardDetails();
   }, []);
+
+  const handleCardAction = (route) => {
+    history.push(route);
+  };
 
   return (
     <React.Fragment>
@@ -67,7 +73,14 @@ const Dashboard = (props) => {
                 icon={icons[index]}
                 heading={card.heading}
                 cardInfo={card.features}
-                btn={<Button type="secondary">{card.buttonText}</Button>}
+                btn={
+                  <Button
+                    type="secondary"
+                    onClick={() => handleCardAction(card.route)}
+                  >
+                    {card.buttonText}
+                  </Button>
+                }
               />
             );
           })}
