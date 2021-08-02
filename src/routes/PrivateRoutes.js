@@ -12,11 +12,15 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
           <Menu.Item key="1">Dashboard</Menu.Item>
           <Menu.Item key="2">Openings</Menu.Item>
           <Menu.Item key="3">Reports</Menu.Item>
+          <Menu.Item key="3">Logout</Menu.Item>
         </Menu>
       </Header>
       <Content
-        className="site-layout"
-        style={{ padding: '0 50px', marginTop: 90, height: '100vh' }}
+        style={{
+          marginTop: 90,
+          marginLeft: '50px',
+          marginRight: '50px',
+        }}
       >
         <Route
           {...rest}
