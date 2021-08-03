@@ -18,11 +18,18 @@ const Dashboard = (props) => {
   const history = useHistory();
   useEffect(() => {
     // make API call
-    props.getDashboardDetails();
+    if (localStorage.getItem('authToken')) props.getDashboardDetails();
   }, []);
 
-  const handleCardAction = (route) => {
-    history.push(route);
+  const handleCardAction = (route, isNewJob) => {
+    if (isNewJob)
+      history.push({
+        pathname: route,
+        state: {
+          openDrawer: true,
+        },
+      });
+    // history.push(route);
   };
 
   return (
@@ -76,7 +83,7 @@ const Dashboard = (props) => {
                 btn={
                   <Button
                     type="secondary"
-                    onClick={() => handleCardAction(card.route)}
+                    onClick={() => handleCardAction(card.route, card.isNewJob)}
                   >
                     {card.buttonText}
                   </Button>

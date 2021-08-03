@@ -21,7 +21,6 @@ const Auth = (props) => {
         //? If user already exits (LOGIN-case)
         localStorage.setItem('authToken', props?.authToken);
         history.push({ pathname: '/dashboard', state: { email: props.email } });
-        debugger;
         props.onBoardSuccess({ data: props.user });
       }
     }
@@ -42,10 +41,12 @@ const Auth = (props) => {
   };
 
   const handleOTPRequest = () => {
-    if (props.isOTPSend) {
-      props.verifyOTPRequest(email);
-    } else {
-      props.sendOTPRequest(email);
+    if (email) {
+      if (props.isOTPSend) {
+        props.verifyOTPRequest(email);
+      } else {
+        props.sendOTPRequest(email);
+      }
     }
   };
 
@@ -88,14 +89,13 @@ const Auth = (props) => {
                   autoFocus
                   defaultValue={props.email}
                   disabled={props.isOTPSend ? true : false}
-                  autoComplete={false}
                   placeholder="doe@some_email.com"
                 />
               </Form.Item>
               {props.isOTPSend && (
                 <Form.Item
                   label="OTP"
-                  name="OTP"
+                  name="OTP"w
                   rules={[
                     {
                       required: true,
@@ -103,12 +103,7 @@ const Auth = (props) => {
                     },
                   ]}
                 >
-                  <Input
-                    autoFocus
-                    autoComplete={false}
-                    type="number"
-                    placeholder="OTP here"
-                  />
+                  <Input autoFocus type="number" placeholder="OTP here" />
                 </Form.Item>
               )}
 
